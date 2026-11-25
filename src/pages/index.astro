@@ -9,6 +9,9 @@ import hero from '../assets/hero.jpg';
 
 const posts = await getPosts();
 const latest = posts.slice(0, 3);
+const stats = posts.length > 0
+  ? [...PROFILE.stats, { value: posts.length, suffix: '', label: 'Posts written' }]
+  : PROFILE.stats;
 ---
 <BaseLayout>
   <!-- Intro -->
@@ -38,8 +41,8 @@ const latest = posts.slice(0, 3);
 
   <!-- Stats -->
   <section class="container">
-    <dl class="stats">
-      {[...PROFILE.stats, { value: posts.length, suffix: '', label: 'Posts written' }].map((stat) => (
+    <dl class="stats" style={`--cols: ${stats.length}`}>
+      {stats.map((stat) => (
         <div class="stat reveal">
           <dt>{stat.label}</dt>
           <dd><span class="count" data-to={stat.value}>{stat.value}</span>{stat.suffix}</dd>

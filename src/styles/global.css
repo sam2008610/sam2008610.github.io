@@ -123,6 +123,11 @@ img {
   max-width: calc(720px + 2 * var(--gutter));
 }
 
+.empty {
+  padding: 32px 0;
+  color: var(--muted);
+}
+
 .muted {
   color: var(--muted);
 }
@@ -824,7 +829,7 @@ img {
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
   margin: 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -1118,6 +1123,11 @@ img {
 
   .stat:nth-child(n + 3) {
     border-top: 1px solid var(--border);
+  }
+
+  .stat:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    border-left: 0;
   }
 }
 

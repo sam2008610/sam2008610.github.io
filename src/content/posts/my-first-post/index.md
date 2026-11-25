@@ -1,7 +1,7 @@
 ---
 title: "我的第一篇文章"
 date: 2024-01-01T00:00:00+08:00
-draft: false
+draft: true
 tags: ["Hugo", "部落格"]
 cover: "./cover.jpg"
 coverAlt: "測試圖片"

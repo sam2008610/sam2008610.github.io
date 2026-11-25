@@ -5,12 +5,13 @@ import { formatDate, getPosts, yearOf } from '../../lib/posts';
 const posts = await getPosts();
 const byYear = Map.groupBy(posts, (post) => yearOf(post.data.date));
 ---
-<BaseLayout title="Writing" description={`${posts.length} posts by Po-Hsiang Tseng`}>
+<BaseLayout title="Writing" description="Writing by Po-Hsiang Tseng">
   <div class="container narrow">
     <header class="page-header">
       <h1>Writing</h1>
-      <p class="muted">{posts.length} {posts.length === 1 ? 'post' : 'posts'}</p>
+      {posts.length > 0 && <p class="muted">{posts.length} {posts.length === 1 ? 'post' : 'posts'}</p>}
     </header>
+    {posts.length === 0 && <p class="empty">Nothing published yet. First posts are coming soon.</p>}
     {[...byYear].map(([year, items]) => (
       <section class="archive-year">
         <h2>{year}</h2>

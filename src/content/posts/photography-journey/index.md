@@ -1,7 +1,7 @@
 ---
 title: "攝影之旅：記錄生活中的美好瞬間"
 date: 2024-08-09T10:00:00+08:00
-draft: false
+draft: true
 tags: ["攝影", "生活", "藝術"]
 cover: "./cover.jpg"
 coverAlt: "美麗瞬間"
