@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate, getPosts, yearOf } from '../../lib/posts';
+
+const posts = await getPosts();
+const byYear = Map.groupBy(posts, (post) => yearOf(post.data.date));
+---
+<BaseLayout title="Writing" description="Writing by Sam Tseng">
+  <div class="container narrow">
+    <header class="page-header">
+      <h1>Writing</h1>
+      {posts.length > 0 && <p class="muted">{posts.length} {posts.length === 1 ? 'post' : 'posts'}</p>}
+    </header>
+    {posts.length === 0 && <p class="empty">Nothing published yet. First posts are coming soon.</p>}
+    {[...byYear].map(([year, items]) => (
+      <section class="archive-year">
+        <h2>{year}</h2>
+        <ul class="archive">
+          {items.map((post) => (
+            <li>
+              <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date, 'short')}</time>
+              <a href={`/posts/${post.id}/`}>{post.data.title}</a>
+              {post.data.draft && <span class="badge">Draft</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</BaseLayout>

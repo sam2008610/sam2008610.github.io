@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import { excerpt, formatDate, type Post } from '../lib/posts';
+import TagList from './TagList.astro';
+
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+const { title, date, cover, coverAlt, tags, draft } = post.data;
+---
+<article class="post-card">
+  <div class="post-card-body">
+    <p class="meta">
+      <time datetime={date.toISOString()}>{formatDate(date)}</time>
+      {draft && <span class="badge">Draft</span>}
+    </p>
+    <h3><a href={`/posts/${post.id}/`}>{title}</a></h3>
+    <p class="excerpt">{excerpt(post)}</p>
+    <TagList tags={tags} />
+  </div>
+  {cover && (
+    <a class="post-card-cover" href={`/posts/${post.id}/`} tabindex="-1" aria-hidden="true">
+      <Image src={cover} alt={coverAlt ?? ''} widths={[240, 480]} sizes="(max-width: 640px) 100vw, 240px" />
+    </a>
+  )}
+</article>

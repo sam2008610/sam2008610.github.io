@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samtseng.dev/sitemap-index.xml

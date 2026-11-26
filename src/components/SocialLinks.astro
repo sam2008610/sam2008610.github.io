@@ -1,0 +1,13 @@
+---
+import { SOCIAL } from '../consts';
+import Icon from './Icon.astro';
+---
+<ul class="social">
+  {SOCIAL.map((link) => (
+    <li>
+      <a href={link.href} aria-label={link.label} title={link.label} rel={link.href.startsWith('http') ? 'me noopener' : undefined}>
+        <Icon name={link.icon} />
+      </a>
+    </li>
+  ))}
+</ul>
