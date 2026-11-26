@@ -1,6 +1,6 @@
-# sam2008610.github.io
+# samtseng.dev
 
-個人部落格，使用 [Astro](https://astro.build) 建置，推送到 `main` 後由 GitHub Actions 自動部署到 GitHub Pages。
+個人網站，使用 [Astro](https://astro.build) 建置，推送到 `main` 後由 GitHub Actions 自動部署到 GitHub Pages（自訂網域 https://samtseng.dev）。
 
 ## 開發
 

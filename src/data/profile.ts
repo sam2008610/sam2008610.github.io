@@ -8,8 +8,7 @@ export const PROFILE = {
   headline: ['Real-time software,', 'close to the metal.'],
   intro:
     "I'm Sam (Po-Hsiang) Tseng, an embedded software engineer focused on automotive systems. For the past two years at KopherBit, I built an AUTOSAR Classic Platform OS from the kernel up — task scheduling, context switching, MPU memory protection and multicore synchronization — in C and assembly.",
-  // TODO: replace with the email address you want to publish
-  email: 'hello@example.com',
+  email: 'hi@samtseng.dev',
   now: {
     label: 'Currently',
     text: 'Moving this site to Astro and redesigning it along the way.',
