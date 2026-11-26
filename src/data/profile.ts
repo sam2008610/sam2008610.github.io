@@ -9,15 +9,6 @@ export const PROFILE = {
   intro:
     "I'm Sam (Po-Hsiang) Tseng, an embedded software engineer focused on automotive systems. For the past two years at KopherBit, I built an AUTOSAR Classic Platform OS from the kernel up — task scheduling, context switching, MPU memory protection and multicore synchronization — in C and assembly.",
   email: 'hi@samtseng.dev',
-  now: {
-    label: 'Currently',
-    text: 'Moving this site to Astro and redesigning it along the way.',
-  },
-  stats: [
-    { value: 2, suffix: ' yrs', label: 'Building OS kernels' },
-    { value: 3, suffix: '', label: 'MCU platforms ported' },
-    { value: 2, suffix: '', label: 'Code generators built' },
-  ],
   experience: [
     {
       period: 'Jun 2024 – May 2026',
