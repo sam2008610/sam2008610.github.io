@@ -1,11 +1,11 @@
 export const SITE = {
-  title: 'Po-Hsiang Tseng',
-  description: 'Po-Hsiang Tseng is an embedded software engineer building real-time OS kernels and low-level software for automotive ECUs.',
+  title: 'Sam Tseng',
+  description: 'Po-Hsiang "Sam" Tseng is an embedded software engineer building real-time OS kernels and low-level software for automotive ECUs.',
   lang: 'en',
   locale: 'en-US',
   ogLocale: 'en_US',
   timeZone: 'Asia/Taipei',
-  author: 'Po-Hsiang Tseng',
+  author: 'Po-Hsiang (Sam) Tseng',
 };
 
 export const NAV = [

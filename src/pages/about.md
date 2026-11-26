@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/PageLayout.astro
 title: About
-description: About Po-Hsiang Tseng
+description: About Po-Hsiang "Sam" Tseng
 ---
 
 <figure class="quote">
@@ -11,7 +11,7 @@ description: About Po-Hsiang Tseng
   <figcaption>— Richard Feynman</figcaption>
 </figure>
 
-I'm Po-Hsiang Tseng, an embedded software engineer based in Hsinchu, Taiwan.
+I'm Po-Hsiang "Sam" Tseng, an embedded software engineer based in Hsinchu, Taiwan.
 
 For the past two years at KopherBit, I developed an AUTOSAR Classic Platform OS for automotive ECUs. Most of that work happened at the kernel level: task scheduling, context switching, MPU memory protection, multicore synchronization, and porting the same OS across TriCore, Cortex-M7 and Cortex-R5F. To make integration smoother, I also built an RTE code generator and a linker script generator.
 

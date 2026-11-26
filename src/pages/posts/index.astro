@@ -5,7 +5,7 @@ import { formatDate, getPosts, yearOf } from '../../lib/posts';
 const posts = await getPosts();
 const byYear = Map.groupBy(posts, (post) => yearOf(post.data.date));
 ---
-<BaseLayout title="Writing" description="Writing by Po-Hsiang Tseng">
+<BaseLayout title="Writing" description="Writing by Sam Tseng">
   <div class="container narrow">
     <header class="page-header">
       <h1>Writing</h1>

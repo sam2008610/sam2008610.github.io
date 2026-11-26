@@ -7,7 +7,7 @@ export const PROFILE = {
   location: 'Hsinchu, Taiwan',
   headline: ['Real-time software,', 'close to the metal.'],
   intro:
-    "I'm Po-Hsiang, an embedded software engineer focused on automotive systems. For the past two years at KopherBit, I built an AUTOSAR Classic Platform OS from the kernel up — task scheduling, context switching, MPU memory protection and multicore synchronization — in C and assembly.",
+    "I'm Sam (Po-Hsiang) Tseng, an embedded software engineer focused on automotive systems. For the past two years at KopherBit, I built an AUTOSAR Classic Platform OS from the kernel up — task scheduling, context switching, MPU memory protection and multicore synchronization — in C and assembly.",
   // TODO: replace with the email address you want to publish
   email: 'hello@example.com',
   now: {
