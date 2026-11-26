@@ -1,17 +1,12 @@
 ---
-import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import Icon from '../components/Icon.astro';
 import { PROFILE } from '../data/profile';
 import { excerpt, formatDate, getPosts } from '../lib/posts';
-import hero from '../assets/hero.jpg';
 
 const posts = await getPosts();
 const latest = posts.slice(0, 3);
-const stats = posts.length > 0
-  ? [...PROFILE.stats, { value: posts.length, suffix: '', label: 'Posts written' }]
-  : PROFILE.stats;
 ---
 <BaseLayout>
   <!-- Intro -->
@@ -29,26 +24,6 @@ const stats = posts.length > 0
         <a class="button" href="#contact">Get in touch</a>
       </div>
     </div>
-
-    <figure class="now-card reveal" style="--delay: 300ms">
-      <Image src={hero} alt="" widths={[480, 960]} sizes="(max-width: 860px) 100vw, 420px" loading="eager" fetchpriority="high" />
-      <figcaption>
-        <span class="now-label"><span class="pulse" aria-hidden="true"></span>{PROFILE.now.label}</span>
-        <span>{PROFILE.now.text}</span>
-      </figcaption>
-    </figure>
-  </section>
-
-  <!-- Stats -->
-  <section class="container">
-    <dl class="stats" style={`--cols: ${stats.length}`}>
-      {stats.map((stat) => (
-        <div class="stat reveal">
-          <dt>{stat.label}</dt>
-          <dd><span class="count" data-to={stat.value}>{stat.value}</span>{stat.suffix}</dd>
-        </div>
-      ))}
-    </dl>
   </section>
 
   <!-- Work -->
@@ -133,29 +108,12 @@ const stats = posts.length > 0
 </BaseLayout>
 
 <script>
-  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // 數字從 0 跳到目標值
-  function countUp(el: HTMLElement) {
-    const target = Number(el.dataset.to);
-    if (reduceMotion || !Number.isFinite(target)) return;
-    const start = performance.now();
-    const duration = 1200;
-    const tick = (now: number) => {
-      const t = Math.min(1, (now - start) / duration);
-      el.textContent = String(Math.round(target * (1 - Math.pow(1 - t, 3))));
-      if (t < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  }
-
   // 捲到畫面內才淡入
   const observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
         entry.target.classList.add('is-visible');
-        entry.target.querySelectorAll<HTMLElement>('.count').forEach(countUp);
         observer.unobserve(entry.target);
       }
     },
